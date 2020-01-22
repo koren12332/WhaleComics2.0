@@ -24,14 +24,20 @@ namespace WhaleComicsDataBase
         {
             Olist.Clear();
             Order o;
+            UserDB uDB = new UserDB();
+            ProductDB pDB = new ProductDB();
+            User user;
             while (reader.Read())
             {
+                user = new User();
                 o = new Order();
-                //o.User = reader["ProductName"].ToString();
-                //o.Product = reader["ProductType"].ToString();
-                //o.OrderDate = int.Parse(reader["ProductPrice"].ToString());
-                o.OrderNumber = int.Parse(reader["ProductQuanity"].ToString());
-                o.Amount = int.Parse(reader["ProductNumber"].ToString());
+                string userName = reader["UserName"].ToString();
+                o.User = uDB.SelectUserByName(userName);
+                int prodNumber = int.Parse(reader["ProductNumber"].ToString());
+                o.Product = pDB.SelectProductByNumber(prodNumber);
+                o.OrderDate = new DateTime(2020, 1, 1);   //int.Parse(reader["ProductPrice"].ToString());
+                o.OrderNumber = int.Parse(reader["OrderNumber"].ToString());
+                o.Amount = int.Parse(reader["Amount"].ToString());
                 Olist.Add(o);
             }
         }

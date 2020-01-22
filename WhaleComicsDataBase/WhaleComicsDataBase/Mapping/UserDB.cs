@@ -21,6 +21,23 @@ namespace WhaleComicsDataBase
             base.ExecuteSelect(query);
             return Ulist;
         }
+        public User SelectUserByName(string name)
+        {
+            query = string.Format("SELECT * FROM [UserTable] WHERE UserName = '{0}'", name);
+            base.ExecuteSelect(query);
+            if (Ulist.Count > 0)
+                return Ulist[0];
+            return null;
+        }
+
+        public User SelectUserByNameAndPassword(string name, string pass)
+        {
+            query = string.Format("SELECT * FROM [UserTable] WHERE UserName = '{0}' AND UserPassword = '{1}'", name,pass);
+            base.ExecuteSelect(query);
+            if (Ulist.Count > 0)
+                return Ulist[0];
+            return null;
+        }
 
         public override void CreateModel()
         {

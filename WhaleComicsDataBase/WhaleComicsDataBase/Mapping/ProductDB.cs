@@ -20,6 +20,17 @@ namespace WhaleComicsDataBase
             base.ExecuteSelect(query);
             return Plist;
         }
+        public Product SelectProductByNumber(int prodNumber)
+        {
+            query = string.Format("SELECT * FROM [ProductTable] WHERE ProductNumber = {0}", prodNumber);
+            base.ExecuteSelect(query);
+            if (Plist.Count > 0)
+                return Plist[0];
+            return null;
+        }
+
+
+
         public override void CreateModel()
         {
             Plist.Clear();
