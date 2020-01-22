@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhaleComicsDataBase", "WhaleComicsDataBase\WhaleComicsDataBase.csproj", "{D83B3A18-B174-48C6-A33B-CF625BA04A92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhaleComics", "WhaleComics\WhaleComics.csproj", "{04231D25-26AF-4795-99D9-0B56C8436E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host\Host.csproj", "{6835716E-7E86-4A8E-8DF0-649D2BABFC45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D83B3A18-B174-48C6-A33B-CF625BA04A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D83B3A18-B174-48C6-A33B-CF625BA04A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D83B3A18-B174-48C6-A33B-CF625BA04A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04231D25-26AF-4795-99D9-0B56C8436E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04231D25-26AF-4795-99D9-0B56C8436E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04231D25-26AF-4795-99D9-0B56C8436E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04231D25-26AF-4795-99D9-0B56C8436E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6835716E-7E86-4A8E-8DF0-649D2BABFC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6835716E-7E86-4A8E-8DF0-649D2BABFC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6835716E-7E86-4A8E-8DF0-649D2BABFC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6835716E-7E86-4A8E-8DF0-649D2BABFC45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

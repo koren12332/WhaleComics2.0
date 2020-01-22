@@ -20,7 +20,7 @@
                     Name="ItemOfTheDayStackPanel">
             <Image />
             <Image />
-            <TextBlock />
+            <TextBlock Name="TestTextBox"/>
             <Button />
         </StackPanel>
         <StackPanel Grid.Row="2">

@@ -119,6 +119,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="FunkoPopPage.xaml.cs">
       <DependentUpon>FunkoPopPage.xaml</DependentUpon>
     </Compile>
@@ -142,6 +147,23 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Connected Services\MyService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyService\Methods.wsdl" />
+    <None Include="Connected Services\MyService\WhaleComics_2._0.MyService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MyService\WhaleComics_2._0.MyService.UserList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
     <None Include="WhaleComics-2.0_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +180,13 @@
     <Content Include="Assets\Photos\superman.png" />
     <Content Include="Assets\Photos\thor.png" />
     <Content Include="Assets\Photos\WhalesComicsLogo.jpg" />
+    <None Include="Connected Services\MyService\item.disco" />
+    <None Include="Connected Services\MyService\configuration91.svcinfo" />
+    <None Include="Connected Services\MyService\configuration.svcinfo" />
+    <None Include="Connected Services\MyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -198,7 +227,12 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MyService\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

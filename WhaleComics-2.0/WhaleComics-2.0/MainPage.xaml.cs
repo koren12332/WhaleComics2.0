@@ -81,7 +81,7 @@ namespace WhaleComics_2._0
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            MyFrame.Navigate(typeof(LogInPage));
+            MyFrame.Navigate(typeof(LoginPage));
         }
     }
 }

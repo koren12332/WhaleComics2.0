@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a8aca5f9-8ec1-4f5f-82b6-cf304f2307e7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="fba8632d-0548-4b21-b981-8d8787fe0d21" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/?xsd=xsd0" />
+    <MetadataFile FileName="Methods.wsdl" MetadataType="Wsdl" ID="fd4de419-bc63-47db-896c-8419a3cdfc9e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="32f808f1-00b7-40f7-a7c2-5003bac45c69" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="a2b58fd4-f150-42c5-b69b-c32c157ab225" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/?xsd=xsd1" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="db5ee485-e535-4a10-b6d9-cf00bc09700b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WhaleComics/Methods/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WhaleComics_2._0.MyService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,17 @@ namespace WhaleComics_2._0
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        MethodsClient manager = new MethodsClient();
         public HomePage()
         {
             this.InitializeComponent();
+            XXX();
+        }
+
+        private async void XXX()
+        {
+            UserList List = await manager.SelectAllUsersAsync();
+            TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
         }
     }
 }
