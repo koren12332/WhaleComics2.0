@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WhaleComicsDataBase
 {
-    public class Class1
+    [CollectionDataContract]
+    public class OrderList : List<Order>
     {
+
     }
 }
