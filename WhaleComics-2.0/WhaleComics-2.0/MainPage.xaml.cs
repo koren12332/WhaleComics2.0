@@ -22,9 +22,66 @@ namespace WhaleComics_2._0
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public string UserName { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
+            MyFrame.Navigate(typeof(HomePage));
+            BackButton.Visibility = Visibility.Collapsed;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+            base.OnNavigatedTo(e);
+            UserName = (string)e.Parameter;
+            UserGreetingsTextBlock.Text = UserName;
+
+        }
+
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void ProductsMenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FunkoPop.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(FunkoPopPage));
+            }
+
+        }
+
+        private void MyAutoSuggestPops_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+                if (!MyFrame.CanGoBack)
+                    BackButton.Visibility = Visibility.Collapsed;
+            }
+            else
+                BackButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void HeaderImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(HomePage));
+            BackButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(LogInPage));
         }
     }
 }

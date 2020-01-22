@@ -119,9 +119,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FunkoPopPage.xaml.cs">
+      <DependentUpon>FunkoPopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Genre.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MarvelProductsPage.xaml.cs">
+      <DependentUpon>MarvelProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +145,19 @@
     <None Include="WhaleComics-2.0_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Photos\batman.jpg" />
+    <Content Include="Assets\Photos\BatmanPop.png" />
+    <Content Include="Assets\Photos\BetterEleven.png" />
+    <Content Include="Assets\Photos\betterFalcon.jpg" />
+    <Content Include="Assets\Photos\BetterSpiderman.jpg" />
+    <Content Include="Assets\Photos\eleven pop.jpg" />
+    <Content Include="Assets\Photos\elevn.png" />
+    <Content Include="Assets\Photos\harrypotter.jpg" />
+    <Content Include="Assets\Photos\ironman.jpg" />
+    <Content Include="Assets\Photos\spidermanlogo.png" />
+    <Content Include="Assets\Photos\superman.png" />
+    <Content Include="Assets\Photos\thor.png" />
+    <Content Include="Assets\Photos\WhalesComicsLogo.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -145,9 +172,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="FunkoPopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MarvelProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +198,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
