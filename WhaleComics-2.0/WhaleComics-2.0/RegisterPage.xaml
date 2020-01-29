@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="WhaleComics_2._0.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WhaleComics_2._0"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="3080.259" Height="1925.463">
+
+    <Grid>
+
+        <StackPanel>
+            <TextBlock Text="Email" FontSize="30"
+                   VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox  Height="70" Width="200" PlaceholderText="e-mail..."
+                 HorizontalAlignment="Left" Margin="10,0,0,0" Name="UserEmailTextBox"/>
+            <TextBlock Text="Username" FontSize="30"
+                   VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox Height="70" Width="200" PlaceholderText="Username..."
+                 HorizontalAlignment="Left" Margin="10,0,0,0" Name="UserNameTextBox"/>
+            <TextBlock  Text="Phone Number" FontSize="30"
+                   VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox  Height="70" Width="200" PlaceholderText="phone number..."
+                 HorizontalAlignment="Left" Margin="10,0,0,0" Name="UserPhoneNumberTextBox"/>
+            <TextBlock Text="Address" FontSize="30"
+                   VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox Height="70" Width="200" PlaceholderText="address..."
+                 HorizontalAlignment="Left" Margin="10,0,0,0" Name="UserAddressTextBox"/>
+            <TextBlock Text="Password" FontSize="30"
+                   VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Height="30" Width="200" PlaceholderText="Password..." Name="PasswordTextBox"
+                 HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <Button Name="RegisterButton" Height="50" Width="50" Margin="5,0,0,0"
+                    FontSize="30" Content="&#xE73E;" Background="LightGreen" FontFamily="Segoe MDL2 Assets"
+                    Click="RegisterButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

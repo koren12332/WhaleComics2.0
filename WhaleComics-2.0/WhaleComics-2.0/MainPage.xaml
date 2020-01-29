@@ -23,7 +23,7 @@
             <Button Name="RegisterButton" RelativePanel.LeftOf="LogInButton"
                     Height="40" Width="40" Margin="5" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE70F;" FontFamily="Segoe MDL2 Assets" FontSize="20"
-                    ToolTipService.ToolTip="Register"/>
+                    ToolTipService.ToolTip="Register" Click="RegisterButton_Click"/>
             <Button Name="CartButton" RelativePanel.LeftOf="RegisterButton"
                     Height="40" Width="40" Margin="5" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE7BF;" FontFamily="Segoe MDL2 Assets" FontSize="20" 

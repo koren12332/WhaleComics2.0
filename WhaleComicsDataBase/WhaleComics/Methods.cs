@@ -12,6 +12,12 @@ namespace WhaleComics
         UserDB uDB = new UserDB();
         ProductDB pDB = new ProductDB();
         OrderDB oDB = new OrderDB();
+
+        public void InsertNewUser(User u)
+        {
+            uDB.InsertNewUser(u);
+        }
+
         public UserList SelectAllUsers()
         {
             return uDB.SelectAllUsers();

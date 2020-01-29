@@ -16,6 +16,8 @@ namespace WhaleComics
         UserList SelectAllUsers();
         [OperationContract]
         User SelectUserByName(string name);
+        [OperationContract]
+        void InsertNewUser(User u);
 
         //Product Methods
 

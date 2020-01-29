@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Syndication;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,7 +28,20 @@ namespace WhaleComics_2._0
         public HomePage()
         {
             this.InitializeComponent();
-            XXX();
+            BuildRss();
+            //XXX();
+        }
+
+        private async void BuildRss()
+        {
+            SyndicationClient client = new SyndicationClient();
+            Uri RSSuri = new Uri("https://www.reddit.com/r/Funko/.rss");
+            var feeds = await client.RetrieveFeedAsync(RSSuri);
+            foreach (var feed in feeds.Items)
+            {
+                listTitles.Items.Add(feed.Title.Text);
+            }
+
         }
 
         private async void XXX()
@@ -36,4 +50,5 @@ namespace WhaleComics_2._0
             TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
         }
     }
+        
 }

@@ -120,6 +120,9 @@ namespace WhaleComics_2._0.MyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/SelectUserByName", ReplyAction="http://tempuri.org/IMethods/SelectUserByNameResponse")]
         System.Threading.Tasks.Task<WhaleComics_2._0.MyService.User> SelectUserByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/InsertNewUser", ReplyAction="http://tempuri.org/IMethods/InsertNewUserResponse")]
+        System.Threading.Tasks.Task InsertNewUserAsync(WhaleComics_2._0.MyService.User u);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -171,6 +174,10 @@ namespace WhaleComics_2._0.MyService {
         
         public System.Threading.Tasks.Task<WhaleComics_2._0.MyService.User> SelectUserByNameAsync(string name) {
             return base.Channel.SelectUserByNameAsync(name);
+        }
+        
+        public System.Threading.Tasks.Task InsertNewUserAsync(WhaleComics_2._0.MyService.User u) {
+            return base.Channel.InsertNewUserAsync(u);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

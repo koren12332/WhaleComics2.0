@@ -39,6 +39,12 @@ namespace WhaleComicsDataBase
             return null;
         }
 
+        public void InsertNewUser(User u)
+        {
+            query = string.Format("INSERT INTO [UserTable] VALUES ('{0}','{1}','{2}','{3}','{4}')", u.UserName, u.UserEmail, u.UserAddress, u.UserPhoneNumber, u.UserPassword);
+            base.Excute(query);
+        }
+
         public override void CreateModel()
         {
             Ulist.Clear();

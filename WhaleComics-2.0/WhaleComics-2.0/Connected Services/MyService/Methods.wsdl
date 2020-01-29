@@ -19,6 +19,12 @@
   <wsdl:message name="IMethods_SelectUserByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectUserByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IMethods_InsertNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewUser" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_InsertNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMethods">
     <wsdl:operation name="SelectAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectAllUsers" message="tns:IMethods_SelectAllUsers_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="SelectUserByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectUserByName" message="tns:IMethods_SelectUserByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMethods/SelectUserByNameResponse" message="tns:IMethods_SelectUserByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMethods/InsertNewUser" message="tns:IMethods_InsertNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMethods/InsertNewUserResponse" message="tns:IMethods_InsertNewUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMethods" type="tns:IMethods">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectUserByName">
       <soap:operation soapAction="http://tempuri.org/IMethods/SelectUserByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewUser">
+      <soap:operation soapAction="http://tempuri.org/IMethods/InsertNewUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -27,4 +27,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertNewUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="u" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
