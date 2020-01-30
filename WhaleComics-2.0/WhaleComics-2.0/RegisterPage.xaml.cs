@@ -36,7 +36,7 @@ namespace WhaleComics_2._0
             u.UserAddress = UserAddressTextBox.Text;
             u.UserName = UserNameTextBox.Text;
             u.UserEmail = UserEmailTextBox.Text;
-            u.UserPassword = PasswordTextBox.Text;
+            u.UserPassword = PasswordTextBox.Password;
             u.UserPhoneNumber = UserPhoneNumberTextBox.Text;
             
 
@@ -51,6 +51,18 @@ namespace WhaleComics_2._0
             {
                 var dialog = new MessageDialog("Registers failed");
                 await dialog.ShowAsync();
+            }
+        }
+
+        private void CheckBox_Changed(object sender, RoutedEventArgs e)
+        {
+            if (revealModeCheckBox.IsChecked == true)
+            {
+                PasswordTextBox.PasswordRevealMode = PasswordRevealMode.Visible;
+            }
+            else
+            {
+                PasswordTextBox.PasswordRevealMode = PasswordRevealMode.Hidden;
             }
         }
     }

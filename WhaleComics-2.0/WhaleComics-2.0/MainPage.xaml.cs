@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,12 +35,52 @@ namespace WhaleComics_2._0
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            base.OnNavigatedTo(e);
+            //base.OnNavigatedTo(e);
             UserName = (string)e.Parameter;
-            UserGreetingsTextBlock.Text = UserName;
-
+            UserGreetingsTextBlock.Text = "Hello, " + UserName;
+            if (UserGreetingsTextBlock.Text != "")
+            {
+                ToolTip toolTip = new ToolTip();
+                toolTip.Content = "Log Out";
+                ToolTipService.SetToolTip(LogInButton, toolTip);
+                LogInButton.Click += LogOut;
+            }
+            else
+            {
+                ToolTip toolTip = new ToolTip();
+                toolTip.Content = "Log in";
+                ToolTipService.SetToolTip(LogInButton, toolTip);
+                LogInButton.Click += LogOut;
+            }
         }
 
+        private async void LogOut(object sender, RoutedEventArgs e)
+        {
+            string content = "Are you sure you want to log out?";
+            string title = "LogOut";
+            var dialog = new MessageDialog(content, title);
+            var yesCommand = new UICommand("Yes", cmd => { });
+            var cancelCommand = new UICommand("Cancel", cmd => { });
+
+            dialog.Options = MessageDialogOptions.None;
+            dialog.Commands.Add(yesCommand);
+
+            dialog.DefaultCommandIndex = 0;
+            dialog.CancelCommandIndex = 0;
+
+            if (cancelCommand != null)
+            {
+                dialog.Commands.Add(cancelCommand);
+                dialog.CancelCommandIndex = (uint)dialog.Commands.Count - 1;
+            }
+
+            var command = await dialog.ShowAsync();
+
+            if (command == yesCommand)
+            {
+                Frame.Navigate(typeof(HomePage));
+            }
+        }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {

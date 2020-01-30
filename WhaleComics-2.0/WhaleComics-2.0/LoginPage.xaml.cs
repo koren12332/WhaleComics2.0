@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WhaleComics_2._0.MyService;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -24,6 +25,7 @@ namespace WhaleComics_2._0
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        MethodsClient manager = new MethodsClient();
         public LoginPage()
         {
             this.InitializeComponent();

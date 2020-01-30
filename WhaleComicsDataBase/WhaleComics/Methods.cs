@@ -27,5 +27,9 @@ namespace WhaleComics
         {
             return uDB.SelectUserByName(name);
         }
+        public User SelectUserByNameAndPassword(string name, string pass)
+        {
+            return null;
+        }
     }
 }

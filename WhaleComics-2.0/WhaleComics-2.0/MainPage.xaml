@@ -15,15 +15,15 @@
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0">
             <Button Name="LogInButton" Height="40" Width="40"
-            RelativePanel.AlignRightWithPanel="True"
-            Margin="5" BorderBrush="Black" BorderThickness="2"
-            Content="&#xE192;" FontFamily="Segoe MDL2 Assets"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Margin="5" BorderBrush="Black" BorderThickness="2"
+                    Content="&#xE192;" FontFamily="Segoe MDL2 Assets"
                     ToolTipService.ToolTip="Log In" Click="LogInButton_Click"/>
 
             <Button Name="RegisterButton" RelativePanel.LeftOf="LogInButton"
-                    Height="40" Width="40" Margin="5" BorderBrush="Black" BorderThickness="2"
+                    Height="40" Margin="5,5,5,0" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE70F;" FontFamily="Segoe MDL2 Assets" FontSize="20"
-                    ToolTipService.ToolTip="Register" Click="RegisterButton_Click"/>
+                    ToolTipService.ToolTip="Register" Click="RegisterButton_Click" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
             <Button Name="CartButton" RelativePanel.LeftOf="RegisterButton"
                     Height="40" Width="40" Margin="5" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE7BF;" FontFamily="Segoe MDL2 Assets" FontSize="20" 
