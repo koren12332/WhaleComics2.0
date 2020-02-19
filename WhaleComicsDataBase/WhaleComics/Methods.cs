@@ -13,16 +13,15 @@ namespace WhaleComics
         ProductDB pDB = new ProductDB();
         OrderDB oDB = new OrderDB();
 
+        //User methods
         public void InsertNewUser(User u)
         {
             uDB.InsertNewUser(u);
-        }
-
+        }       
         public UserList SelectAllUsers()
         {
             return uDB.SelectAllUsers();
         }
-
         public User SelectUserByName(string name)
         {
             return uDB.SelectUserByName(name);
@@ -30,6 +29,16 @@ namespace WhaleComics
         public User SelectUserByNameAndPassword(string name, string pass)
         {
             return null;
+        }
+
+        //Product methods
+        public ProductList SelectAllProduct()
+        {
+            return pDB.SelectAllProduct();
+        }
+        public Product SelectProductByNumber(int prodNumber)
+        {
+            return pDB.SelectProductByNumber(prodNumber);
         }
     }
 }

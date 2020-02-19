@@ -25,6 +25,24 @@
   <wsdl:message name="IMethods_InsertNewUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertNewUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IMethods_SelectUserByNameAndPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectUserByNameAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_SelectUserByNameAndPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectUserByNameAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_SelectAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_SelectAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_SelectProductByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProductByNumber" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_SelectProductByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProductByNumberResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMethods">
     <wsdl:operation name="SelectAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectAllUsers" message="tns:IMethods_SelectAllUsers_InputMessage" />
@@ -37,6 +55,18 @@
     <wsdl:operation name="InsertNewUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/InsertNewUser" message="tns:IMethods_InsertNewUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMethods/InsertNewUserResponse" message="tns:IMethods_InsertNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserByNameAndPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectUserByNameAndPassword" message="tns:IMethods_SelectUserByNameAndPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMethods/SelectUserByNameAndPasswordResponse" message="tns:IMethods_SelectUserByNameAndPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectAllProduct" message="tns:IMethods_SelectAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMethods/SelectAllProductResponse" message="tns:IMethods_SelectAllProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProductByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectProductByNumber" message="tns:IMethods_SelectProductByNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMethods/SelectProductByNumberResponse" message="tns:IMethods_SelectProductByNumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMethods" type="tns:IMethods">
@@ -61,6 +91,33 @@
     </wsdl:operation>
     <wsdl:operation name="InsertNewUser">
       <soap:operation soapAction="http://tempuri.org/IMethods/InsertNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserByNameAndPassword">
+      <soap:operation soapAction="http://tempuri.org/IMethods/SelectUserByNameAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllProduct">
+      <soap:operation soapAction="http://tempuri.org/IMethods/SelectAllProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProductByNumber">
+      <soap:operation soapAction="http://tempuri.org/IMethods/SelectProductByNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -43,6 +43,7 @@ namespace WhaleComicsDataBase
                 p.ProductPrice = int.Parse(reader["ProductPrice"].ToString());
                 p.ProductQuanity = int.Parse(reader["ProductQuanity"].ToString());
                 p.ProductNumber = int.Parse(reader["ProductNumber"].ToString());
+                p.PruductGenre = reader["ProductGenre"].ToString();
                 Plist.Add(p);
             }
         }

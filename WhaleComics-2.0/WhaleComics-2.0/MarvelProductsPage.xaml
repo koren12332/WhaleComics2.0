@@ -19,7 +19,7 @@
                   IsItemClickEnabled="True" ItemClick="MarvelGrdiView_ItemClick"
                   ItemsSource="{x:Bind MarvelProducts}">
             <GridView.ItemTemplate>
-                <DataTemplate x:DataType="data:Product">
+                <DataTemplate x:DataType="data:MyProduct">
                     <StackPanel BorderBrush="Black" BorderThickness="4">
                         <Image Source="{x:Bind ProductImage}"
                                Width="300" Height="300"/>

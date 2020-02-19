@@ -53,6 +53,12 @@ namespace WhaleComics_2._0
                 Frame.Navigate(typeof(HomePage));
             }
         }
+
+        private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+                this.LogInConfirm_Click(LogInConfirm, e);
+        }
     }
 
 }

@@ -140,7 +140,6 @@
     <Compile Include="MarvelProductsPage.xaml.cs">
       <DependentUpon>MarvelProductsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -160,6 +159,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\MyService\Methods.wsdl" />
+    <None Include="Connected Services\MyService\WhaleComics_2._0.MyService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MyService\WhaleComics_2._0.MyService.ProductList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MyService\WhaleComics_2._0.MyService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -173,8 +178,8 @@
     <Content Include="Assets\Photos\batman.jpg" />
     <Content Include="Assets\Photos\BatmanPop.png" />
     <Content Include="Assets\Photos\BetterEleven.png" />
-    <Content Include="Assets\Photos\betterFalcon.jpg" />
-    <Content Include="Assets\Photos\BetterSpiderman.jpg" />
+    <Content Include="Assets\Photos\Falcon.jpg" />
+    <Content Include="Assets\Photos\Spiderman.jpg" />
     <Content Include="Assets\Photos\eleven pop.jpg" />
     <Content Include="Assets\Photos\elevn.png" />
     <Content Include="Assets\Photos\harrypotter.jpg" />
