@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using WhaleComics_2._0.MyService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,32 +26,24 @@ namespace WhaleComics_2._0
     public sealed partial class MarvelProductsPage : Page
     {
         public ObservableCollection<MyProduct> MarvelProducts;
+        public ObservableCollection<Product> CartProducts;
         MethodsClient manager = new MethodsClient();
         public MarvelProductsPage()
         {
             this.InitializeComponent();
+            InitImages();
             MarvelProducts = new ObservableCollection<MyProduct>();
             InitProducts(MarvelProducts);
+        }
 
-            //MarvelProducts.Add(new Product
-            //{
-            //    ProductImage = "Assets/Photos/thor.png",
-            //    ProductName = "Thor",
-            //    ProductPrice = "20$"
-            //});
-            //MarvelProducts.Add(new Product
-            //{
-            //    ProductImage = "Assets/Photos/BetterSpiderman.jpg",
-            //    ProductName = "Spiderman",
-            //    ProductPrice = "10$"
-            //});
-            //MarvelProducts.Add(new Product
-            //{
-            //    ProductImage = "Assets/Photos/betterFalcon.jpg",
-            //    ProductName = "falcon",
-            //    ProductPrice = "15$"
-            //});
+        private void InitImages()
+        {
 
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            CartProducts = (ObservableCollection<Product>)e.Parameter;
         }
 
         private async void InitProducts(ObservableCollection<MyProduct> products)
@@ -65,14 +58,53 @@ namespace WhaleComics_2._0
                 else
                     myProduct.ProductImage = string.Format("Assets/Photos/{0}.jpg", p.ProductName);
                 myProduct.ProductName = p.ProductName;
-                myProduct.ProductPrice = "$"+p.ProductPrice.ToString();
+                myProduct.ProductPrice = "$" + p.ProductPrice.ToString();
                 products.Add(myProduct);
             }
         }
 
-        private void MarvelGrdiView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void AddToCartButton_Click(object sender, RoutedEventArgs e)
         {
+            var mySelectedButton = (Button)sender;
+            string productName = mySelectedButton.Name;
+            try
+            {
+                Product p = await manager.SelectProductByNameAsync(productName);
+                p.ProductImage = MarvelProducts.Where(q => q.ProductName == p.ProductName)
+                    .Select(q => q.ProductImage).ToString();
+                CartProducts.Add(p);
+                MoveToCartPrompt();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        private async void MoveToCartPrompt()
+        {
+            string content = "Do you want to procced to cart?";
+            string title = "Added To Cart";
+            var dialog = new MessageDialog(content, title);
+            var yesCommand = new UICommand("Yes", cmd => { });
+            var cancelCommand = new UICommand("No", cmd => { });
 
+            dialog.Options = MessageDialogOptions.None;
+            dialog.Commands.Add(yesCommand);
+
+            dialog.DefaultCommandIndex = 0;
+            dialog.CancelCommandIndex = 0;
+
+            if (cancelCommand != null)
+            {
+                dialog.Commands.Add(cancelCommand);
+                dialog.CancelCommandIndex = (uint)dialog.Commands.Count - 1;
+            }
+
+            var command = await dialog.ShowAsync();
+
+            if (command == yesCommand)
+            {
+                Frame.Navigate(typeof(CartPage), CartProducts);
+            }
         }
     }
     public class MyProduct

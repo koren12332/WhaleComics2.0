@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -22,30 +23,21 @@ namespace WhaleComics_2._0
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FunkoPopPage : Page
+    public sealed partial class CartPage : Page
     {
-        public List<Genre> FunkoPops;
         public ObservableCollection<Product> CartProducts;
-        public FunkoPopPage()
+
+        public CartPage()
         {
             this.InitializeComponent();
-            FunkoPops = new List<Genre>();
-            FunkoPops.Add(new Genre { GenreIcon = "Assets/Photos/ironman.jpg", GenreCategory = "Marvel" });
-            FunkoPops.Add(new Genre { GenreIcon = "Assets/Photos/batman.jpg", GenreCategory = "DC" });
-            FunkoPops.Add(new Genre { GenreIcon = "Assets/Photos/harrypotter.jpg", GenreCategory = "HP" });
+            
         }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             CartProducts = (ObservableCollection<Product>)e.Parameter;
-        }
+            String stringPath = @"Assets/Photos/thor.png";
+            
 
-
-        private void GenresListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var selectedFunko = (Genre)e.ClickedItem;
-            if (selectedFunko.GenreCategory.Equals("Marvel"))
-                this.Frame.Navigate(typeof(MarvelProductsPage), CartProducts);
         }
     }
 }

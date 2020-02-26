@@ -54,6 +54,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SelectProductByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectProductByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="SelectProductByNameResult" nillable="true" type="q5:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SelectAllProduct">
     <xs:complexType>
       <xs:sequence />
@@ -62,7 +76,7 @@
   <xs:element name="SelectAllProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="SelectAllProductResult" nillable="true" type="q5:ProductList" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="SelectAllProductResult" nillable="true" type="q6:ProductList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -76,7 +90,7 @@
   <xs:element name="SelectProductByNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="SelectProductByNumberResult" nillable="true" type="q6:Product" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase" minOccurs="0" name="SelectProductByNumberResult" nillable="true" type="q7:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

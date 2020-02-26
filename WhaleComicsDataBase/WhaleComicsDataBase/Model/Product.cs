@@ -22,5 +22,7 @@ namespace WhaleComicsDataBase
         public int ProductNumber { get; set; }
         [DataMember]
         public string PruductGenre { get; set; }
+        [DataMember]
+        public string ProductImage { get; set; }
     }
 }

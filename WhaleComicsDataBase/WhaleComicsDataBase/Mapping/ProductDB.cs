@@ -29,6 +29,14 @@ namespace WhaleComicsDataBase
             return null;
         }
 
+        public Product SelectProductByName(string prodName)
+        {
+            query = string.Format("SELECT * FROM [ProductTable] WHERE ProductName = '{0}'", prodName);
+            base.ExecuteSelect(query);
+            if (Plist.Count > 0)
+                return Plist[0];
+            return null;
+        }
 
 
         public override void CreateModel()
@@ -44,6 +52,7 @@ namespace WhaleComicsDataBase
                 p.ProductQuanity = int.Parse(reader["ProductQuanity"].ToString());
                 p.ProductNumber = int.Parse(reader["ProductNumber"].ToString());
                 p.PruductGenre = reader["ProductGenre"].ToString();
+                p.ProductImage = reader["ProductImage"].ToString();
                 Plist.Add(p);
             }
         }

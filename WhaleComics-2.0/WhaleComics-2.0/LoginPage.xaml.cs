@@ -26,9 +26,11 @@ namespace WhaleComics_2._0
     public sealed partial class LoginPage : Page
     {
         MethodsClient manager = new MethodsClient();
+        public User myUser { get; set; }
         public LoginPage()
         {
             this.InitializeComponent();
+            myUser = new User();
         }
         private async void LogInConfirm_Click(object sender, RoutedEventArgs e)
         {
@@ -37,12 +39,22 @@ namespace WhaleComics_2._0
             try
             {
                 // checking if the user exists in the DB
+                myUser = await manager.SelectUserByNameAndPasswordAsync(name, password);
                 // if exists
-                var dialog = new MessageDialog("Welcome!");
-                await dialog.ShowAsync();
-                Frame.Navigate(typeof(MainPage), name);
-                await CoreApplication.RequestRestartAsync(name);
-                //if not
+                if (myUser != null)
+                {
+                    var dialog = new MessageDialog("Welcome!");
+                    await dialog.ShowAsync();
+                    Frame.Navigate(typeof(MainPage), name);
+                    await CoreApplication.RequestRestartAsync(name);
+                }
+                else
+                {
+                    var dialog = new MessageDialog("User not found");
+                    await dialog.ShowAsync();
+                    Frame.Navigate(typeof(HomePage));
+
+                }
 
 
             }

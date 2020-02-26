@@ -113,14 +113,10 @@ namespace WhaleComics_2._0.MyService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ProductList", Namespace="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase", ItemName="Product")]
-    public class ProductList : System.Collections.ObjectModel.ObservableCollection<WhaleComics_2._0.MyService.Product> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase")]
     public partial class Product : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string ProductImageField;
         
         private string ProductNameField;
         
@@ -133,6 +129,19 @@ namespace WhaleComics_2._0.MyService {
         private string ProductTypeField;
         
         private string PruductGenreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductImage {
+            get {
+                return this.ProductImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductImageField, value) != true)) {
+                    this.ProductImageField = value;
+                    this.RaisePropertyChanged("ProductImage");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ProductName {
@@ -222,6 +231,12 @@ namespace WhaleComics_2._0.MyService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ProductList", Namespace="http://schemas.datacontract.org/2004/07/WhaleComicsDataBase", ItemName="Product")]
+    public class ProductList : System.Collections.ObjectModel.ObservableCollection<WhaleComics_2._0.MyService.Product> {
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyService.IMethods")]
     public interface IMethods {
@@ -237,6 +252,9 @@ namespace WhaleComics_2._0.MyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/SelectUserByNameAndPassword", ReplyAction="http://tempuri.org/IMethods/SelectUserByNameAndPasswordResponse")]
         System.Threading.Tasks.Task<WhaleComics_2._0.MyService.User> SelectUserByNameAndPasswordAsync(string name, string pass);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/SelectProductByName", ReplyAction="http://tempuri.org/IMethods/SelectProductByNameResponse")]
+        System.Threading.Tasks.Task<WhaleComics_2._0.MyService.Product> SelectProductByNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/SelectAllProduct", ReplyAction="http://tempuri.org/IMethods/SelectAllProductResponse")]
         System.Threading.Tasks.Task<WhaleComics_2._0.MyService.ProductList> SelectAllProductAsync();
@@ -302,6 +320,10 @@ namespace WhaleComics_2._0.MyService {
         
         public System.Threading.Tasks.Task<WhaleComics_2._0.MyService.User> SelectUserByNameAndPasswordAsync(string name, string pass) {
             return base.Channel.SelectUserByNameAndPasswordAsync(name, pass);
+        }
+        
+        public System.Threading.Tasks.Task<WhaleComics_2._0.MyService.Product> SelectProductByNameAsync(string name) {
+            return base.Channel.SelectProductByNameAsync(name);
         }
         
         public System.Threading.Tasks.Task<WhaleComics_2._0.MyService.ProductList> SelectAllProductAsync() {

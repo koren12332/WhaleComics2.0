@@ -28,10 +28,14 @@ namespace WhaleComics
         }
         public User SelectUserByNameAndPassword(string name, string pass)
         {
-            return null;
+            return uDB.SelectUserByNameAndPassword(name, pass);
         }
 
         //Product methods
+        public Product SelectProductByName(string name)
+        {
+            return pDB.SelectProductByName(name);
+        }
         public ProductList SelectAllProduct()
         {
             return pDB.SelectAllProduct();

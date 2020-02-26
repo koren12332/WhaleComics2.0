@@ -20,6 +20,8 @@ namespace WhaleComics
         void InsertNewUser(User u);
         [OperationContract]
         User SelectUserByNameAndPassword(string name, string pass);
+        [OperationContract]
+        Product SelectProductByName(string name);
 
 
         //Product Methods

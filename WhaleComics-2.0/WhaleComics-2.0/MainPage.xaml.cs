@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -27,15 +28,16 @@ namespace WhaleComics_2._0
         MethodsClient manager = new MethodsClient();
         public string UserName { get; set; }
         List<String> suggestions = new List<string>();
-
+        public ObservableCollection<Product> CartProducts;
         public MainPage()
         {
             this.InitializeComponent();
+            CartProducts = new ObservableCollection<Product>();
             MyFrame.Navigate(typeof(HomePage));
             BackButton.Visibility = Visibility.Collapsed;
             UserGreetingsTextBlock.Text = "Hello, Pal!";
             LogInButton.Visibility = Visibility.Visible;
-            LogOutButton.Visibility = Visibility.Collapsed;
+            //LogOutButton.Visibility = Visibility.Collapsed;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -65,7 +67,7 @@ namespace WhaleComics_2._0
             {
                 UserGreetingsTextBlock.Text = "Hello, Pal!";
                 LogInButton.Visibility = Visibility.Visible;
-                LogOutButton.Visibility = Visibility.Collapsed;
+                //LogOutButton.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -107,7 +109,7 @@ namespace WhaleComics_2._0
             if (FunkoPop.IsSelected)
             {
                 BackButton.Visibility = Visibility.Visible;
-                MyFrame.Navigate(typeof(FunkoPopPage));
+                MyFrame.Navigate(typeof(FunkoPopPage),CartProducts);
             }
 
         }

@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Marvel Products" FontSize="45"/>
         <GridView Grid.Row="1" Name="MarvelGrdiView"
-                  IsItemClickEnabled="True" ItemClick="MarvelGrdiView_ItemClick"
+                  IsItemClickEnabled="False"
                   ItemsSource="{x:Bind MarvelProducts}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="data:MyProduct">
@@ -24,10 +24,10 @@
                         <Image Source="{x:Bind ProductImage}"
                                Width="300" Height="300"/>
                         <StackPanel Orientation="Horizontal">
-                            <Button Name="AddToCartButton" Height="40" Width="40" Margin="5"
+                            <Button Name="{x:Bind ProductName}" Height="40" Width="40" Margin="5"
                                    BorderBrush="Black" BorderThickness="2" Content="&#xE7BF;"
                                    FontFamily="Segoe MDL2 Assets" FontSize="15" 
-                                    ToolTipService.ToolTip="Add to cart"/>
+                                   ToolTipService.ToolTip="Add to cart" Click="AddToCartButton_Click"/>
                             <TextBlock Text="{x:Bind ProductPrice}" Margin="5" />
                             <TextBlock Text="{x:Bind ProductName}"
                                    FontSize="30"

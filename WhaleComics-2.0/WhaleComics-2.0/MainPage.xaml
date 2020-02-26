@@ -19,12 +19,15 @@
                     Margin="5" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE192;" FontFamily="Segoe MDL2 Assets"
                     ToolTipService.ToolTip="Log In" Click="LogInButton_Click"/>
-            
-            <Button Name="LogOutButton" Height="40" Width="80"
-                    RelativePanel.LeftOf="UserGreetingsTextBlock" Visibility="Collapsed"
+            <Button Name="LogOutButton" Height="40" Width="40"
+                    RelativePanel.LeftOf="UserGreetingsTextBlock" Visibility="Visible"
                     Margin="5" BorderBrush="Black" BorderThickness="2"
-                    Content="Log Out" FontFamily="David"
-                    ToolTipService.ToolTip="Log Out" Click="LogOutButton_Click"/>
+                    ToolTipService.ToolTip="Log Out" Click="LogOutButton_Click">
+                <Button.Content>
+                    <Image Source="Assets/Photos/LogOut.jpg" Stretch="Uniform"
+                           Height="35" Width="35" Margin="-10"/>
+                </Button.Content>
+            </Button>
 
             <Button Name="RegisterButton" RelativePanel.LeftOf="LogInButton"
                     Height="40" Margin="5,5,5,0" BorderBrush="Black" BorderThickness="2"
