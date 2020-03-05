@@ -28,7 +28,7 @@ namespace WhaleComics_2._0
     {
         public ObservableCollection<Product> CartProducts;
         public ObservableCollection<MyCartProduct> MyCartProducts;
-
+        bool flag = true;
 
 
         public CartPage()
@@ -65,9 +65,48 @@ namespace WhaleComics_2._0
             }
         }
 
-        private void MyCartListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void MyCartListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (flag)
+            {
+                MyCartProduct selectedItem = (MyCartProduct)((ListView)sender).SelectedItem;
+                string content = "Are you sure you want to remove this item from your cart?";
+                string title = "Remove item";
+                var dialog = new MessageDialog(content, title);
+                var yesCommand = new UICommand("Yes", cmd => { });
+                var cancelCommand = new UICommand("No", cmd => { });
 
+                dialog.Options = MessageDialogOptions.None;
+                dialog.Commands.Add(yesCommand);
+
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 0;
+
+                if (cancelCommand != null)
+                {
+                    dialog.Commands.Add(cancelCommand);
+                    dialog.CancelCommandIndex = (uint)dialog.Commands.Count - 1;
+                }
+
+                var command = await dialog.ShowAsync();
+
+                if (command == yesCommand)
+                {
+                    MyCartProducts.Remove(selectedItem);
+                    flag = !flag;
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void CheckoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:
+            //1) check if the quantity in valid.
+            Frame.Navigate(typeof(CheckoutPage), MyCartProducts);
         }
     }
     public class MyCartProduct

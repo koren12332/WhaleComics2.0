@@ -18,7 +18,8 @@
         <TextBlock Grid.Row="0" Style="{StaticResource HeaderTextBlockStyle}"
                    Text="My Cart" />
         <ListView Grid.Row="1" Name="MyCartListView"
-                  ItemsSource="{x:Bind MyCartProducts}" SelectionChanged="MyCartListView_SelectionChanged">
+                  ItemsSource="{x:Bind MyCartProducts}" ToolTipService.ToolTip="Remove"
+                  SelectionChanged="MyCartListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:MyCartProduct">
                     <Grid BorderBrush="Black" BorderThickness="4" Margin="5">
@@ -36,11 +37,10 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="QTY:" Margin="5"/>
-                                <TextBlock Text="{x:Bind Path=CurrQuantity}" Margin="5"/>
+                                <TextBlock Text="{x:Bind CurrQuantity}" Margin="5"/>
                                 <Slider Maximum="10" Minimum="1" Width="100" Margin="5"
-                                        Value="{x:Bind CurrQuantity}" Name="{x:Bind ProductName}" />
+                                        Value="{x:Bind CurrQuantity}" Name="{x:Bind ProductName}"/>
                             </StackPanel>
-                            <Button Content="Delete" />
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
@@ -49,6 +49,7 @@
         <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                 Height="50" Width="150" Background="#FFFF33" BorderBrush="Black" BorderThickness="4" 
                 Content="Checkout" Margin="0,10,0,10" FontSize="20"
+                Name="CheckoutButton" Click="CheckoutButton_Click"
                 FontFamily="Comic Sans MS"/>
     </Grid>
 </Page>
