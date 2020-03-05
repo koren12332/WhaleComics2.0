@@ -70,8 +70,13 @@ namespace WhaleComics_2._0
             try
             {
                 Product p = await manager.SelectProductByNameAsync(productName);
-                p.ProductImage = MarvelProducts.Where(q => q.ProductName == p.ProductName)
-                    .Select(q => q.ProductImage).ToString();
+                foreach (var item in MarvelProducts)
+                {
+                    if (p.ProductName == item.ProductName)
+                        p.ProductImage = item.ProductImage;
+                }
+                //p.ProductImage = MarvelProducts.Where(q => q.ProductName == p.ProductName)
+                //    .Select(q => q.ProductImage).ToString();
                 CartProducts.Add(p);
                 MoveToCartPrompt();
             }

@@ -7,14 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data ="using:WhaleComics_2._0"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Marvel Products" FontSize="45"/>
+        <TextBlock Text="Marvel Products" Style="{StaticResource HeaderTextBlockStyle}"/>
         <GridView Grid.Row="1" Name="MarvelGrdiView"
                   IsItemClickEnabled="False"
                   ItemsSource="{x:Bind MarvelProducts}">

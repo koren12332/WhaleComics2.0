@@ -176,5 +176,10 @@ namespace WhaleComics_2._0
                 Frame.Navigate(typeof(MainPage),"");
             }
         }
+
+        private void CartButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(CartPage),null);
+        }
     }
 }

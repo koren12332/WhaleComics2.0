@@ -36,7 +36,7 @@
             <Button Name="CartButton" RelativePanel.LeftOf="RegisterButton"
                     Height="40" Width="40" Margin="5" BorderBrush="Black" BorderThickness="2"
                     Content="&#xE7BF;" FontFamily="Segoe MDL2 Assets" FontSize="20" 
-                    ToolTipService.ToolTip="My Cart"/>
+                    ToolTipService.ToolTip="My Cart" Click="CartButton_Click"/>
 
             <Image Source="Assets/Photos/WhalesComicsLogo.jpg" Name="HeaderImage" RelativePanel.AlignHorizontalCenterWithPanel="True"
                    Height="90" Tapped="HeaderImage_Tapped"/>

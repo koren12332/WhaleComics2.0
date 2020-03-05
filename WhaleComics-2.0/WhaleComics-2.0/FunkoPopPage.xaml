@@ -15,7 +15,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Funko" FontSize="30" Margin="0,5,0,5"/>
+        <TextBlock Text="Funko" Style="{StaticResource HeaderTextBlockStyle}"/>
         <GridView Grid.Row="1" Name="GenresListView"
                   IsItemClickEnabled="True" ItemClick="GenresListView_ItemClick"
                   ItemsSource="{x:Bind FunkoPops}">

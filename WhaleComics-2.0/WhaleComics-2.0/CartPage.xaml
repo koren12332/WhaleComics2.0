@@ -2,13 +2,53 @@
     x:Class="WhaleComics_2._0.CartPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WhaleComics_2._0"
+    xmlns:local="WhaleComics_2._0.MyService"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
+    xmlns:data ="using:WhaleComics_2._0"
+    mc:Ignorable="d" MinWidth="1200"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Image Name="xxx"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource HeaderTextBlockStyle}"
+                   Text="My Cart" />
+        <ListView Grid.Row="1" Name="MyCartListView"
+                  ItemsSource="{x:Bind MyCartProducts}" SelectionChanged="MyCartListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:MyCartProduct">
+                    <Grid BorderBrush="Black" BorderThickness="4" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{x:Bind ProductImage}"
+                               Width="200" Height="200" Grid.Column="0" Margin="5"/>
+                        <StackPanel Grid.Column="1" >
+                            <TextBlock Text="{x:Bind ProductName}" FontSize="30"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text=" $ " FontSize="20"/>
+                                <TextBlock Text="{x:Bind ProductPrice}" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="QTY:" Margin="5"/>
+                                <TextBlock Text="{x:Bind Path=CurrQuantity}" Margin="5"/>
+                                <Slider Maximum="10" Minimum="1" Width="100" Margin="5"
+                                        Value="{x:Bind CurrQuantity}" Name="{x:Bind ProductName}" />
+                            </StackPanel>
+                            <Button Content="Delete" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Height="50" Width="150" Background="#FFFF33" BorderBrush="Black" BorderThickness="4" 
+                Content="Checkout" Margin="0,10,0,10" FontSize="20"
+                FontFamily="Comic Sans MS"/>
     </Grid>
 </Page>

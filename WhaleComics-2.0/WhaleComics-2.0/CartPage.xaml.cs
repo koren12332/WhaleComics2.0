@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using WhaleComics_2._0.MyService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,18 +27,55 @@ namespace WhaleComics_2._0
     public sealed partial class CartPage : Page
     {
         public ObservableCollection<Product> CartProducts;
+        public ObservableCollection<MyCartProduct> MyCartProducts;
+
+
 
         public CartPage()
         {
             this.InitializeComponent();
-            
-        }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            CartProducts = (ObservableCollection<Product>)e.Parameter;
-            String stringPath = @"Assets/Photos/thor.png";
-            
 
         }
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            CartProducts = (ObservableCollection<Product>)e.Parameter;
+            if (CartProducts == null)
+            {
+                var dialog = new MessageDialog("there are no products in your cart.");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                BuildMyCartProducts();
+            }
+        }
+
+        private void BuildMyCartProducts()
+        {
+            MyCartProducts = new ObservableCollection<MyCartProduct>();
+            foreach (Product item in CartProducts)
+            {
+                MyCartProduct mp = new MyCartProduct();
+                mp.ProductImage = item.ProductImage;
+                mp.ProductName = item.ProductName;
+                mp.ProductPrice = item.ProductPrice;
+                mp.CurrQuantity = CartProducts.Count(p => p.ProductName == item.ProductName);
+                if (!MyCartProducts.Any(p => p.ProductName == mp.ProductName))
+                    MyCartProducts.Add(mp);
+            }
+        }
+
+        private void MyCartListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+    }
+    public class MyCartProduct
+    {
+        public string ProductName { get; set; }
+        public int ProductPrice { get; set; }
+        public string ProductImage { get; set; }
+        public int ProductQuanity { get; set; }
+        public int CurrQuantity { get; set; }
     }
 }
