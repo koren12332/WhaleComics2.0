@@ -13,7 +13,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <RelativePanel Grid.Row="0">
+        <RelativePanel Grid.Row="0" Background="AliceBlue">
             <Button Name="LogInButton" Height="40" Width="40"
                     RelativePanel.AlignRightWithPanel="True"
                     Margin="5" BorderBrush="Black" BorderThickness="2"
