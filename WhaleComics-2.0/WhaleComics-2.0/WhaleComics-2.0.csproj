@@ -181,6 +181,7 @@
     <None Include="WhaleComics-2.0_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\facebook.png" />
     <Content Include="Assets\Photos\LogOut.jpg" />
     <Content Include="Assets\Photos\batman.jpg" />
     <Content Include="Assets\Photos\BatmanPop.png" />

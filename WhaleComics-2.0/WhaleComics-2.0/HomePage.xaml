@@ -24,12 +24,14 @@
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock/>
-            <StackPanel Orientation="Horizontal">
-                <Button Name="FacebookButton" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Name="FacebookButton" Click="FacebookButton_Click">
+                    <Image Source="Assets/facebook.png" Height="40" Width="40"/>
+                </Button>
                 <Button Name="InstegramButton" />
                 <Button Name="TwitterButton" />
                 <TextBlock />
-                <HyperlinkButton />
+                <HyperlinkButton Content="www.microsoft.com" NavigateUri="http://www.microsoft.com"/>
             </StackPanel>
         </StackPanel>
 
