@@ -14,19 +14,54 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView Name="listTitles" />
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="0" Name="listTitles"/>
+            <WebView Grid.Column="1" Name="RssWebView"/>
+        </Grid>
+
+        <Button Grid.Row="1" Height="350" Width="500" Name="ProductOfTheDayButton"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Click="ProductOfTheDayButton_Click">
+            
+            <Button.Content>
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" FlowDirection="RightToLeft">
+                        <TextBlock Text="מוצר היום" FontSize="35" FontWeight="Bold"
+                                   Foreground="Blue" TextAlignment="Center"/>
+
+                        <Image Source="Assets/Photos/Spiderman.jpg"
+                               Stretch="Fill" Height="100"/>
+                        
+                    </StackPanel>
+                    <TextBlock Text="שם המוצר" TextWrapping="Wrap" 
+                               TextAlignment="Right" FontSize="15"
+                               Foreground="Black"/>
+
+                    <TextBlock Text="מחיר" FontSize="15" Foreground="Red" 
+                               VerticalAlignment="Center" TextAlignment="Center"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+
+        <!--
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     Name="ItemOfTheDayStackPanel">
             <Image />
             <Image />
             <TextBlock Name="TestTextBox"/>
             <Button />
-        </StackPanel>
+        </StackPanel>-->
         <StackPanel Grid.Row="2">
             <TextBlock/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button Name="FacebookButton" Click="FacebookButton_Click">
-                    <Image Source="Assets/facebook.png" Height="40" Width="40"/>
+                    <Image Source="Assets/facebook.png" Height="40" Width="40" Margin="-5"/>
                 </Button>
                 <Button Name="InstegramButton" />
                 <Button Name="TwitterButton" />

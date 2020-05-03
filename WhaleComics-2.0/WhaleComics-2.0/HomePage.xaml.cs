@@ -41,19 +41,28 @@ namespace WhaleComics_2._0
             {
                 listTitles.Items.Add(feed.Title.Text);
             }
-
         }
 
-        private async void XXX()
+        private void ShowWebRss()
         {
-            UserList List = await manager.SelectAllUsersAsync();
-            TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
+            // Continue implements!
         }
+
+        //private async void XXX()
+        //{
+        //    UserList List = await manager.SelectAllUsersAsync();
+        //    TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
+        //}
 
         private void FacebookButton_Click(object sender, RoutedEventArgs e)
         {
             //navigate to where you want
             // you can add tooltip.
+        }
+
+        private void ProductOfTheDayButton_Click(object sender, RoutedEventArgs e)
+        {
+            //navigate to the category page of the product.
         }
     }
         
