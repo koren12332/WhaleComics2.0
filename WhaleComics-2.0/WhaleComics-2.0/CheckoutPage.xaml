@@ -9,6 +9,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Name="SumText"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Review your order"
+                   FontSize="30" Margin="10"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="Shipping Adderess"/>
+                <TextBlock Text="Country: "/>
+                <TextBox Name="CountryTextBox" PlaceholderText="Country"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

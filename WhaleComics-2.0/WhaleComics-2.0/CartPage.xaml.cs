@@ -63,6 +63,12 @@ namespace WhaleComics_2._0
                 if (!MyCartProducts.Any(p => p.ProductName == mp.ProductName))
                     MyCartProducts.Add(mp);
             }
+            int subTotal = 0;
+            foreach (MyCartProduct mp in MyCartProducts)
+            {
+                subTotal += mp.CurrQuantity * mp.ProductPrice;
+            }
+            SubtotalTextBlock.Text = subTotal.ToString();
         }
 
         private async void MyCartListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
