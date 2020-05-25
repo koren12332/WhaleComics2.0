@@ -35,11 +35,16 @@ namespace WhaleComics_2._0
         private async void BuildRss()
         {
             SyndicationClient client = new SyndicationClient();
-            Uri RSSuri = new Uri("https://www.reddit.com/r/Funko/.rss");
+            Uri RSSuri = new Uri("https://www.popcultcha.com.au/rss/catalog/category/cid/441/store_id/1");
             var feeds = await client.RetrieveFeedAsync(RSSuri);
             foreach (var feed in feeds.Items)
             {
-                listTitles.Items.Add(feed.Title.Text);
+                string imgUrl = feed.Summary.Text;
+                int startCut = imgUrl.IndexOf("src") + 5;
+                int stopCut = imgUrl.IndexOf(".png") + 4;
+                //imgUrl = imgUrl.Split('<img src=\"')[1].Split('\" border=\"0\"')[0];
+                string feedImgSrc = imgUrl.Substring(startCut, stopCut);
+                listTitles.Items.Add(feed.Summary.Text);
             }
         }
 

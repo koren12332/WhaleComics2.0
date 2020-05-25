@@ -28,6 +28,7 @@ namespace WhaleComics_2._0
         MethodsClient manager = new MethodsClient();
         public string UserName { get; set; }
         List<String> suggestions = new List<string>();
+        public User MyUser { get; set; }
         public ObservableCollection<Product> CartProducts;
         public MainPage()
         {
@@ -40,7 +41,7 @@ namespace WhaleComics_2._0
             //LogOutButton.Visibility = Visibility.Collapsed;
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             UserName = (string)e.Parameter;
             if (UserName != "")
@@ -48,6 +49,7 @@ namespace WhaleComics_2._0
                 UserGreetingsTextBlock.Text = "Hello, " + UserName;
                 LogInButton.Visibility = Visibility.Collapsed;
                 LogOutButton.Visibility = Visibility.Visible;
+                MyUser = await manager.SelectUserByNameAsync(UserName);
                 //(UserGreetingsTextBlock.Text != "")
                 //{
                 //    ToolTip toolTip = new ToolTip();
@@ -106,6 +108,7 @@ namespace WhaleComics_2._0
 
         private void ProductsMenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MyUser = MyUser;
             if (FunkoPop.IsSelected)
             {
                 BackButton.Visibility = Visibility.Visible;

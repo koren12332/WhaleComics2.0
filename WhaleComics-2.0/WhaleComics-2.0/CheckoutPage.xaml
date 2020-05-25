@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel>
+            <StackPanel Grid.Column="0">
                 <TextBlock Text="Shipping Adderess"/>
                 <TextBlock Text="Country: "/>
                 <TextBox Name="CountryTextBox" PlaceholderText="Country"/>

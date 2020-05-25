@@ -33,7 +33,6 @@
                 <PasswordBox Height="30" Width="200" PlaceholderText="Password..." Name="PasswordTextBox"
                  HorizontalAlignment="Left" Margin="10,0,0,0" PasswordRevealMode="Hidden"/>
                 <CheckBox Name="revealModeCheckBox" 
-                            IsChecked="False" 
                             Checked="CheckBox_Changed" Unchecked="CheckBox_Changed"/>
                 <Button Name="RegisterButton" Height="50" Width="50" Margin="5,0,0,0"
                     FontSize="30" Content="&#xE73E;" Background="LightGreen" FontFamily="Segoe MDL2 Assets"

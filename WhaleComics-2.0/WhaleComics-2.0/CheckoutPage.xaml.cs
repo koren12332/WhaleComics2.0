@@ -33,7 +33,7 @@ namespace WhaleComics_2._0
         {
             CustomerOrder = (ObservableCollection<MyCartProduct>)e.Parameter;
             double sum = CustomerOrder.Sum(p => p.ProductPrice * p.CurrQuantity);
-            SumText.Text = sum.ToString();
+            //SumText.Text = sum.ToString();
         }
     }
 }
