@@ -23,26 +23,26 @@
             <WebView Grid.Column="1" Name="RssWebView"/>
         </Grid>
 
-        <Button Grid.Row="1" Height="350" Width="500" Name="ProductOfTheDayButton"
+        <Button Grid.Row="1" Height="300" Width="500" Name="ProductOfTheDayButton"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
                 Click="ProductOfTheDayButton_Click">
             
             <Button.Content>
                 <StackPanel >
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" FlowDirection="RightToLeft">
-                        <TextBlock Text="מוצר היום" FontSize="35" FontWeight="Bold"
-                                   Foreground="Blue" TextAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" FlowDirection="LeftToRight">
+                        <TextBlock Text="Item Of The Day!" Margin="10" FontSize="35" FontStyle="Oblique" FontWeight="Bold"
+                                   Foreground="Red" TextAlignment="Left" HorizontalAlignment="Left" />
 
-                        <Image Source="Assets/Photos/Spiderman.jpg"
-                               Stretch="Fill" Height="100"/>
+                        <Image Source="Assets/Photos/Spiderman.jpg" HorizontalAlignment="Right" 
+                               Stretch="Fill" Height="150" Width="175" VerticalAlignment="Center"/>
                         
                     </StackPanel>
-                    <TextBlock Text="שם המוצר" TextWrapping="Wrap" 
-                               TextAlignment="Right" FontSize="15"
+                    <TextBlock Text="Product's Name:" TextWrapping="Wrap" Margin="5" 
+                               TextAlignment="Left" VerticalAlignment="Top" FontSize="15" FontStyle="Italic"
                                Foreground="Black"/>
 
-                    <TextBlock Text="מחיר" FontSize="15" Foreground="Red" 
-                               VerticalAlignment="Center" TextAlignment="Center"/>
+                    <TextBlock Text="Price:" TextWrapping="Wrap" FontSize="15" Foreground="Black" FontStyle="Italic" 
+                               VerticalAlignment="Top" Margin="5"  TextAlignment="Left"/>
 
                 </StackPanel>
             </Button.Content>
@@ -61,12 +61,16 @@
             <TextBlock/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button Name="FacebookButton" Click="FacebookButton_Click">
-                    <Image Source="Assets/facebook.png" Height="40" Width="40" Margin="-5"/>
+                    <Image Source="Assets/Photos/facebook.png" Height="40" Width="40" Margin="-5"/>
                 </Button>
-                <Button Name="InstegramButton" />
-                <Button Name="TwitterButton" />
-                <TextBlock />
-                <HyperlinkButton Content="www.microsoft.com" NavigateUri="http://www.microsoft.com"/>
+                <Button Name="InstegramButton" Click="InstegramButton_Click">
+                    <Image Source="Assets/Photos/NewInstegram.png" Height="40" Width="40" Margin="-5"/>
+                </Button>
+                <Button Name="TwitterButton" Click="TwitterButton_Click">
+                    <Image Source="Assets/Photos/Twitter.png" Height="40" Width="40" Margin="-5"/>
+                </Button>
+                <TextBlock/>
+                <HyperlinkButton Content="www.microsoft.com" Margin="5" NavigateUri="http://www.microsoft.com"/>
             </StackPanel>
         </StackPanel>
 

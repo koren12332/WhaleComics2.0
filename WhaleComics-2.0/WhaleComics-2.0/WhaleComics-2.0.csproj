@@ -182,11 +182,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\facebook.png" />
+    <Content Include="Assets\Photos\Facebook.png" />
+    <Content Include="Assets\Photos\Instegram.png" />
     <Content Include="Assets\Photos\LogOut.jpg" />
     <Content Include="Assets\Photos\batman.jpg" />
     <Content Include="Assets\Photos\BatmanPop.png" />
     <Content Include="Assets\Photos\BetterEleven.png" />
     <Content Include="Assets\Photos\Falcon.jpg" />
+    <Content Include="Assets\Photos\NewInstegram.png" />
     <Content Include="Assets\Photos\Spiderman.jpg" />
     <Content Include="Assets\Photos\eleven pop.jpg" />
     <Content Include="Assets\Photos\elevn.png" />
@@ -195,6 +198,7 @@
     <Content Include="Assets\Photos\spidermanlogo.png" />
     <Content Include="Assets\Photos\superman.png" />
     <Content Include="Assets\Photos\thor.png" />
+    <Content Include="Assets\Photos\Twitter.png" />
     <Content Include="Assets\Photos\WhalesComicsLogo.jpg" />
     <None Include="Connected Services\MyService\item.disco" />
     <None Include="Connected Services\MyService\configuration91.svcinfo" />

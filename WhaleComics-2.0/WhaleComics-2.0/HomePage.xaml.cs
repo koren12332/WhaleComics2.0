@@ -69,6 +69,16 @@ namespace WhaleComics_2._0
         {
             //navigate to the category page of the product.
         }
+
+        private void InstegramButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TwitterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
         
 }

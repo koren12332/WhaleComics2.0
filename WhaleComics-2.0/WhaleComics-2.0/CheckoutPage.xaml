@@ -24,8 +24,38 @@
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Shipping Adderess"/>
                 <TextBlock Text="Country: "/>
-                <TextBox Name="CountryTextBox" PlaceholderText="Country"/>
+                <TextBox Name="CountryTextBox" PlaceholderText="Massasuches"/>
+                <TextBlock Text="City: "/>
+                <TextBox Name="CityTextBox" PlaceholderText="Deham"/>
+                <TextBlock Text="Address: "/>
+                <TextBox Name="AddressTextBox" PlaceholderText="824 Madison Street
+Jacksonville Beach"/>
+                <TextBlock Text="Zipcode: "/>
+                <TextBox Name="ZipcodeTextBox" PlaceholderText="02026"/>
+                <TextBlock Text="Phone Number: "/>
+                <TextBox Name="PhoneNumberTextBox" PlaceholderText="(800) 409-4716"/>
             </StackPanel>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Payment Method"/>
+                    <TextBlock Text="Credit Card Number" />
+                    <TextBox Name="xTextBox" PlaceholderText="..." />
+                    <TextBlock Text="ID" />
+                    <TextBlock Text="Expiration Date"/>
+                    <TextBlock Text="CVV"/>
+
+
+
+
+
+                </StackPanel>
+            </Grid>
+
         </Grid>
     </Grid>
 </Page>
