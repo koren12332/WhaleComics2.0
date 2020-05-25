@@ -44,10 +44,14 @@ Jacksonville Beach"/>
                 <StackPanel Grid.Column="2">
                     <TextBlock Text="Payment Method"/>
                     <TextBlock Text="Credit Card Number" />
-                    <TextBox Name="xTextBox" PlaceholderText="..." />
+                    <TextBox Name="CreditCardNumberTextBox" PlaceholderText="..." />
                     <TextBlock Text="ID" />
+                    <TextBox Name="IdTextBox" PlaceholderText="..." />
                     <TextBlock Text="Expiration Date"/>
+                    <TextBox Name="ExDateTextBox" PlaceholderText="05/25" />
                     <TextBlock Text="CVV"/>
+                    <TextBox Name="CvvTextBox" PlaceholderText="782" />
+
 
 
 
