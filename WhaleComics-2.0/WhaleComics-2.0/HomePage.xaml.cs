@@ -41,10 +41,10 @@ namespace WhaleComics_2._0
             {
                 string imgUrl = feed.Summary.Text;
                 int startCut = imgUrl.IndexOf("src") + 5;
-                int stopCut = imgUrl.IndexOf(".png") + 4;
+                int stopCut = imgUrl.IndexOf("\" border");
                 //imgUrl = imgUrl.Split('<img src=\"')[1].Split('\" border=\"0\"')[0];
-                string feedImgSrc = imgUrl.Substring(startCut, stopCut);
-                listTitles.Items.Add(feed.Summary.Text);
+                string feedImgSrc = imgUrl.Substring(startCut, stopCut-startCut);
+                listTitles.Items.Add(feedImgSrc);
             }
         }
 
