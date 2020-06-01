@@ -44,5 +44,9 @@ namespace WhaleComics
         {
             return pDB.SelectProductByNumber(prodNumber);
         }
+        public int CountProducts()
+        {
+            return pDB.CountProducts();
+        }
     }
 }

@@ -19,6 +19,26 @@ namespace WhaleComicsDataBase
             command = new SqlCommand();
             command.Connection = connection;
         }
+        public int ExecuteScalar(string query)
+        {
+            int result = 0;
+            try
+            {
+                command.CommandText = query;
+                connection.Open();
+                result = int.Parse(command.ExecuteScalar().ToString());
+                CreateModel();
+            }
+            catch (Exception ex)
+            { }
+            finally
+            {
+                connection.Close();
+            }
+            return result;
+        }
+
+
         public void Excute(string query)
         {
            try

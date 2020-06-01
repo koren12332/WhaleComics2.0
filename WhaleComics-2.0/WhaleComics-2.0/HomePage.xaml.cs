@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,10 +25,12 @@ namespace WhaleComics_2._0
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        ObservableCollection<BitmapIcon> RssPic;
         MethodsClient manager = new MethodsClient();
         public HomePage()
         {
             this.InitializeComponent();
+            RssPic = new ObservableCollection<BitmapIcon>();
             BuildRss();
             //XXX();
         }
@@ -42,11 +45,15 @@ namespace WhaleComics_2._0
                 string imgUrl = feed.Summary.Text;
                 int startCut = imgUrl.IndexOf("src") + 5;
                 int stopCut = imgUrl.IndexOf("\" border");
-                //imgUrl = imgUrl.Split('<img src=\"')[1].Split('\" border=\"0\"')[0];
-                string feedImgSrc = imgUrl.Substring(startCut, stopCut-startCut);
-                listTitles.Items.Add(feedImgSrc);
+                string feedImgSrc = imgUrl.Substring(startCut, stopCut - startCut);
+                BitmapIcon myBit = new BitmapIcon();
+                myBit.UriSource = new Uri(feedImgSrc);
+                RssPic.Add(myBit);
+                //listTitles.Items.Add(myImage);
             }
         }
+
+        
 
         private void ShowWebRss()
         {
@@ -55,7 +62,7 @@ namespace WhaleComics_2._0
 
         //private async void XXX()
         //{
-        //    UserList List = await manager.SelectAllUsersAsync();
+        //    UserList List = await manager.SelectAl;lUsersAsync();
         //    TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
         //}
 
@@ -80,5 +87,5 @@ namespace WhaleComics_2._0
 
         }
     }
-        
+    
 }

@@ -38,6 +38,11 @@ namespace WhaleComicsDataBase
             return null;
         }
 
+        public int CountProducts()
+        {
+            query = string.Format("SELECT COUNT(ProductName) FROM Product");
+            return base.ExecuteScalar(query);
+        }
 
         public override void CreateModel()
         {
