@@ -29,6 +29,9 @@ namespace WhaleComics
         ProductList SelectAllProduct();
         [OperationContract]
         Product SelectProductByNumber(int prodNumber);
+        [OperationContract]
+        int CountProducts();
+
         //Order Methods
     }
 }
