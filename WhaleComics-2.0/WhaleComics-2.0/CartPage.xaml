@@ -47,10 +47,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <RelativePanel Grid.Row="2">
-            <TextBlock Text="Subtotal: " FontSize="30" Margin="10"
-                       RelativePanel.AlignLeftWithPanel="True" Name="SubtotalText"
-                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-            <TextBlock RelativePanel.AlignRightWith="SubtotalText"
+            <TextBlock RelativePanel.AlignLeftWithPanel="True"  Margin="10"
                        RelativePanel.AlignVerticalCenterWithPanel="True"
                        FontSize="30" Name="SubtotalTextBlock"/>
 

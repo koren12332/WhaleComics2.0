@@ -14,7 +14,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Review your order"
-                   FontSize="30" Margin="10"/>
+                   FontSize="50" Margin="10"
+                   FontWeight="Bold" HorizontalAlignment="Center"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
@@ -22,7 +23,8 @@
                 <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Margin="20,0,0,0">
-                <TextBlock Text="Shipping Adderess"/>
+                <TextBlock Text="Shipping Adderess" FontSize="30"
+                           FontWeight="Bold"/>
                 <TextBlock Text="Country: "/>
                 <TextBox Name="CountryTextBox" PlaceholderText="Massasuches"/>
                 <TextBlock Text="City: "/>
@@ -36,7 +38,8 @@ Jacksonville Beach"/>
                 <TextBox Name="PhoneNumberTextBox" PlaceholderText="(800) 409-4716"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Margin="40,0,0,0" >
-                <TextBlock Text="Payment Method"/>
+                <TextBlock Text="Payment Method" FontSize="30"
+                           FontWeight="Bold"/>
                 <TextBlock Text="Credit Card Number" />
                 <TextBox Name="CreditCardNumberTextBox" PlaceholderText="..." />
                 <TextBlock Text="ID" />
@@ -46,11 +49,26 @@ Jacksonville Beach"/>
                 <TextBlock Text="CVC"/>
                 <TextBox Name="CVCTextBox" PlaceholderText="782" />
             </StackPanel>
-          <StackPanel Grid.Column="2" Margin="40,0,0,0">
-            <TextBlock Name="ItemsPriceTextBlock"/>
-            <TextBlock Text="Shipping &amp; Handling: $10" />
-            <TextBlock Text="Tax: $3.32"/>
-            <TextBlock Name="TotalPriceTextBlock"/>
+          <StackPanel Grid.Column="2" Margin="40,0,0,0" BorderThickness="3"
+                      BorderBrush="Black" Padding="6">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Items: $ " FontWeight="Bold"/>
+                    <TextBlock Name="ItemsPriceTextBlock"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Shipping &amp; Handling: $10" FontWeight="Black"/>
+                </StackPanel>
+            <StackPanel>
+                    <TextBlock Text="Tax: $3.32" FontWeight="Bold"/>
+                </StackPanel>
+            <StackPanel>
+                    <TextBlock Text="Total: $ " FontWeight="Bold"/>
+              <TextBlock Name="TotalPriceTextBlock"/>
+            </StackPanel>
+            <Button Name="PurchaseButton" Content="Purchase"
+                    FontSize="40" Padding="5" Margin="0,30,0,0"
+                    Background="#FFFF33" BorderBrush="Black" BorderThickness="4" 
+                    Click="PurchaseButton_Click" FontFamily="Comic Sans MS"/>
           </StackPanel>
         </Grid>
     </Grid>

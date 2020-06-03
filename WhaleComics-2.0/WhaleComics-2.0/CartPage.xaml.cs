@@ -68,7 +68,7 @@ namespace WhaleComics_2._0
             {
                 subTotal += mp.CurrQuantity * mp.ProductPrice;
             }
-            SubtotalTextBlock.Text = subTotal.ToString();
+            SubtotalTextBlock.Text = "SubTotal: $" + subTotal.ToString();
         }
 
         private async void MyCartListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

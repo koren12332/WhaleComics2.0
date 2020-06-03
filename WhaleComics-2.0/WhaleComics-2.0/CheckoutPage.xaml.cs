@@ -5,8 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using WhaleComics_2._0.MyService;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,9 +35,14 @@ namespace WhaleComics_2._0
         {
             CustomerOrder = (ObservableCollection<MyCartProduct>)e.Parameter;
             double sum = CustomerOrder.Sum(p => p.ProductPrice * p.CurrQuantity);
-            ItemsPriceTextBlock.Text = "Items: $ " + sum.ToString();
-            TotalPriceTextBlock.Text = "Total: $ " + (sum+13.32).ToString();
-            //SumText.Text = sum.ToString();
+            ItemsPriceTextBlock.Text = sum.ToString();
+            TotalPriceTextBlock.Text = (sum + 13.32).ToString();
+        }
+        private async void PurchaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new MessageDialog("Thank you for your purchase, see ya next time! ");
+            await dialog.ShowAsync();
+            CoreApplication.Exit();
         }
     }
 }
