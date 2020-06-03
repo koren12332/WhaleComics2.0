@@ -28,10 +28,8 @@
                                    BorderBrush="Black" BorderThickness="2" Content="&#xE7BF;"
                                    FontFamily="Segoe MDL2 Assets" FontSize="15" 
                                    ToolTipService.ToolTip="Add to cart" Click="AddToCartButton_Click"/>
-                            <TextBlock Text="{x:Bind ProductPrice}" Margin="5" />
-                            <TextBlock Text="{x:Bind ProductName}"
-                                   FontSize="30"
-                                   HorizontalAlignment="Center"/>
+                           <TextBlock Text="{x:Bind ProductName}" FontSize="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{x:Bind ProductPrice}" FontSize="20" Margin="40,7,0,0" />
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

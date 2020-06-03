@@ -35,8 +35,8 @@ namespace WhaleComics_2._0
         {
             CustomerOrder = (ObservableCollection<MyCartProduct>)e.Parameter;
             double sum = CustomerOrder.Sum(p => p.ProductPrice * p.CurrQuantity);
-            ItemsPriceTextBlock.Text = sum.ToString();
-            TotalPriceTextBlock.Text = (sum + 13.32).ToString();
+            ItemsPriceTextBlock.Text = " $" + sum.ToString();
+            TotalPriceTextBlock.Text = " $" + (sum + 13.32).ToString();
         }
         private async void PurchaseButton_Click(object sender, RoutedEventArgs e)
         {

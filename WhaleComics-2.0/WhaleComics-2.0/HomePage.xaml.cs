@@ -46,7 +46,7 @@ namespace WhaleComics_2._0
                 int proId = r.Next(1, count + 1);
                 Product dailyProduct = await manager.SelectProductByNumberAsync(proId);
                 DailyProName.Text = "Product's Name: " + dailyProduct.ProductName;
-                DailyProPrice.Text = "Product's Price: " + dailyProduct.ProductPrice + " $";
+                DailyProPrice.Text = "Product's Price: $" + dailyProduct.ProductPrice;
                 string uriStr = string.Format(@"C:\Users\LENOVO\source\repos\koren12332\WhaleComics2.0\WhaleComics-2.0\WhaleComics-2.0\Assets\Photos\{0}.jpg", dailyProduct.ProductName);
                 BitmapImage image = new BitmapImage(new Uri(uriStr, UriKind.RelativeOrAbsolute));
                 DailyPic.Source = image;
