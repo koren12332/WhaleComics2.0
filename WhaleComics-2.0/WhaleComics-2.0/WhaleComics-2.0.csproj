@@ -197,7 +197,7 @@
     <Content Include="Assets\Photos\ironman.jpg" />
     <Content Include="Assets\Photos\spidermanlogo.png" />
     <Content Include="Assets\Photos\superman.png" />
-    <Content Include="Assets\Photos\thor.png" />
+    <Content Include="Assets\Photos\Thor.png" />
     <Content Include="Assets\Photos\Twitter.png" />
     <Content Include="Assets\Photos\WhalesComicsLogo.jpg" />
     <None Include="Connected Services\MyService\item.disco" />

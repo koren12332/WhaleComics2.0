@@ -261,6 +261,9 @@ namespace WhaleComics_2._0.MyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/SelectProductByNumber", ReplyAction="http://tempuri.org/IMethods/SelectProductByNumberResponse")]
         System.Threading.Tasks.Task<WhaleComics_2._0.MyService.Product> SelectProductByNumberAsync(int prodNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMethods/CountProducts", ReplyAction="http://tempuri.org/IMethods/CountProductsResponse")]
+        System.Threading.Tasks.Task<int> CountProductsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -332,6 +335,10 @@ namespace WhaleComics_2._0.MyService {
         
         public System.Threading.Tasks.Task<WhaleComics_2._0.MyService.Product> SelectProductByNumberAsync(int prodNumber) {
             return base.Channel.SelectProductByNumberAsync(prodNumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> CountProductsAsync() {
+            return base.Channel.CountProductsAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

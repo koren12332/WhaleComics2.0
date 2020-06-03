@@ -40,7 +40,7 @@ namespace WhaleComicsDataBase
 
         public int CountProducts()
         {
-            query = string.Format("SELECT COUNT(ProductName) FROM Product");
+            query = string.Format("SELECT COUNT(ProductName) FROM [ProductTable]");
             return base.ExecuteScalar(query);
         }
 

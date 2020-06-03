@@ -28,15 +28,15 @@
                         <TextBlock Text="Item Of The Day!" Margin="10" FontSize="35" FontStyle="Oblique" FontWeight="Bold"
                                    Foreground="Red" TextAlignment="Left" HorizontalAlignment="Left" />
 
-                        <Image Source="Assets/Photos/Spiderman.jpg" HorizontalAlignment="Right" 
+                        <Image Name="DailyPic" HorizontalAlignment="Right" 
                                Stretch="Fill" Height="150" Width="175" VerticalAlignment="Center"/>
 
                     </StackPanel>
-                    <TextBlock Text="Product's Name:" TextWrapping="Wrap" Margin="5" 
+                    <TextBlock Name="DailyProName" TextWrapping="Wrap" Margin="5" 
                                TextAlignment="Left" VerticalAlignment="Top" FontSize="15" FontStyle="Italic"
                                Foreground="Black"/>
 
-                    <TextBlock Text="Price:" TextWrapping="Wrap" FontSize="15" Foreground="Black" FontStyle="Italic" 
+                    <TextBlock Name="DailyProPrice" TextWrapping="Wrap" FontSize="15" Foreground="Black" FontStyle="Italic" 
                                VerticalAlignment="Top" Margin="5"  TextAlignment="Left"/>
 
                 </StackPanel>

@@ -49,6 +49,12 @@
   <wsdl:message name="IMethods_SelectProductByNumber_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectProductByNumberResponse" />
   </wsdl:message>
+  <wsdl:message name="IMethods_CountProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountProducts" />
+  </wsdl:message>
+  <wsdl:message name="IMethods_CountProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountProductsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMethods">
     <wsdl:operation name="SelectAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectAllUsers" message="tns:IMethods_SelectAllUsers_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="SelectProductByNumber">
       <wsdl:input wsaw:Action="http://tempuri.org/IMethods/SelectProductByNumber" message="tns:IMethods_SelectProductByNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMethods/SelectProductByNumberResponse" message="tns:IMethods_SelectProductByNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMethods/CountProducts" message="tns:IMethods_CountProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMethods/CountProductsResponse" message="tns:IMethods_CountProducts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMethods" type="tns:IMethods">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectProductByNumber">
       <soap:operation soapAction="http://tempuri.org/IMethods/SelectProductByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountProducts">
+      <soap:operation soapAction="http://tempuri.org/IMethods/CountProducts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
