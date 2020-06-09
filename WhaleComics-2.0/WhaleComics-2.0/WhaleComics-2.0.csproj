@@ -183,6 +183,7 @@
   <ItemGroup>
     <Content Include="Assets\facebook.png" />
     <Content Include="Assets\Photos\Facebook.png" />
+    <Content Include="Assets\Photos\Freddy.png" />
     <Content Include="Assets\Photos\Instegram.png" />
     <Content Include="Assets\Photos\LogOut.jpg" />
     <Content Include="Assets\Photos\batman.jpg" />

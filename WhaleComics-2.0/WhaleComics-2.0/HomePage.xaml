@@ -11,13 +11,18 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" Name="listTitles"
+        <Button Name="FunkoPage" Height="650" HorizontalAlignment="Center" Click="FunkoPage_Click">
+
+            <Image Name="Welcome" Source="Assets/Photos/Freddy.png" Stretch="Fill">
+
+            </Image>
+        </Button>
+        <!--<ListView Grid.Row="0" Name="listTitles"
                   ItemsSource="RssPic">
-        </ListView>
+        </>
         <Button Grid.Row="1" Height="300" Width="500" Name="ProductOfTheDayButton"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
                 Click="ProductOfTheDayButton_Click">
@@ -41,10 +46,9 @@
 
                 </StackPanel>
             </Button.Content>
-        </Button>
+        </>
 
 
-        <!--
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     Name="ItemOfTheDayStackPanel">
             <Image />
@@ -55,14 +59,14 @@
         <StackPanel Grid.Row="2">
             <TextBlock/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Name="FacebookButton" Click="FacebookButton_Click">
+                <Button Name="FacebookButton" Click="FacebookButton_Click" ToolTipService.ToolTip="Facebook Page" >
                     <Image Source="Assets/Photos/facebook.png" Height="40" Width="40" Margin="-5"/>
                 </Button>
                 <Button Name="InstegramButton" Click="InstegramButton_Click">
-                    <Image Source="Assets/Photos/NewInstegram.png" Height="40" Width="40" Margin="-5"/>
+                    <Image Source="Assets/Photos/NewInstegram.png" Height="40" Width="40" Margin="-5" ToolTipService.ToolTip="Instegram Page"/>
                 </Button>
                 <Button Name="TwitterButton" Click="TwitterButton_Click">
-                    <Image Source="Assets/Photos/Twitter.png" Height="40" Width="40" Margin="-5"/>
+                    <Image Source="Assets/Photos/Twitter.png" Height="40" Width="40" Margin="-5" ToolTipService.ToolTip="Twitter Page"/>
                 </Button>
                 <TextBlock/>
                 <HyperlinkButton Content="www.microsoft.com" Margin="5" NavigateUri="http://www.microsoft.com"/>

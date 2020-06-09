@@ -8,6 +8,7 @@ using WhaleComics_2._0.MyService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
+using Windows.System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
@@ -32,12 +33,12 @@ namespace WhaleComics_2._0
         {
             this.InitializeComponent();
             RssPic = new ObservableCollection<BitmapIcon>();
-            BuildRss();
-            BuildDailyProduct();
+            //BuildRss();
+            //BuildDailyProduct();
             //XXX();
         }
 
-        private async void BuildDailyProduct()
+        /*private async void BuildDailyProduct()
         {
             int count = await manager.CountProductsAsync();
             if (count > 0)
@@ -54,7 +55,7 @@ namespace WhaleComics_2._0
 
             
         }
-
+        
         private async void BuildRss()
         {
             SyndicationClient client = new SyndicationClient();
@@ -85,26 +86,34 @@ namespace WhaleComics_2._0
         //    UserList List = await manager.SelectAl;lUsersAsync();
         //    TestTextBox.Text = List[0].UserName + " " + List[1].UserName;
         //}
+        */
 
-        private void FacebookButton_Click(object sender, RoutedEventArgs e)
+        //private void ProductOfTheDayButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //navigate to the category page of the product.
+        //}
+
+       async private void FacebookButton_Click(object sender, RoutedEventArgs e)
         {
-            //navigate to where you want
-            // you can add tooltip.
+            Uri uri = new Uri("https://www.facebook.com/Popcultcha");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+        async private void InstegramButton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("https://www.instagram.com/dis.pops/");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
-        private void ProductOfTheDayButton_Click(object sender, RoutedEventArgs e)
+        async private void TwitterButton_Click(object sender, RoutedEventArgs e)
         {
-            //navigate to the category page of the product.
+            Uri uri = new Uri("https://twitter.com/brianmariotti");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
-        private void InstegramButton_Click(object sender, RoutedEventArgs e)
+         async private void FunkoPage_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TwitterButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            Uri uri = new Uri("https://www.funko.com/");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
     }
     
