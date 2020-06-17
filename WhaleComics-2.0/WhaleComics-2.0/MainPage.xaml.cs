@@ -39,6 +39,7 @@ namespace WhaleComics_2._0
             UserGreetingsTextBlock.Text = "Hello, Pal!";
             LogInButton.Visibility = Visibility.Visible;
             //LogOutButton.Visibility = Visibility.Collapsed;
+
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -182,7 +183,7 @@ namespace WhaleComics_2._0
 
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
-            MyFrame.Navigate(typeof(CartPage),null);
+            MyFrame.Navigate(typeof(CartPage));
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WhaleComics_2._0
         public ObservableCollection<Product> CartProducts;
         public ObservableCollection<MyCartProduct> MyCartProducts;
         bool flag = true;
-
+        MethodsClient manager = new MethodsClient();
 
         public CartPage()
         {
@@ -53,6 +53,7 @@ namespace WhaleComics_2._0
         private void BuildMyCartProducts()
         {
             MyCartProducts = new ObservableCollection<MyCartProduct>();
+
             foreach (Product item in CartProducts)
             {
                 MyCartProduct mp = new MyCartProduct();
